@@ -1,30 +1,29 @@
-let activeCollaps = false
-
 const collapsButton = document.querySelector('.collapsible__button')
-const collapsibleActionVisible = document.querySelector(
+const collapsibleVisible = document.querySelector(
   '.collapsible__action--visible'
 )
-const collapsibleActionHidden = document.querySelector(
-  '.collapsible__action--hidden'
-)
+const collapsibleHidden = document.querySelector('.collapsible__action--hidden')
 const collapsibleContent = document.querySelector('.collapsible__content')
+
 collapsibleContent.style.height = '0'
 collapsibleContent.style.overflow = 'hidden'
-collapsibleActionVisible.style.display = 'none'
 collapsibleContent.style.backgroundColor = '#e8e8e8'
+collapsibleVisible.style.display = 'none'
+
+let activeCollaps = false
 
 const collaps = () => {
   if (activeCollaps) {
     collapsibleContent.style.height = '0'
-    collapsibleActionVisible.style.display = 'none'
-    collapsibleActionHidden.style.display = 'block'
+    collapsibleVisible.style.display = 'none'
+    collapsibleHidden.style.display = 'block'
     collapsibleContent.animate([{ height: '50px' }, { height: 0 }], {
       duration: 200,
     })
   } else {
     collapsibleContent.style.height = '50px'
-    collapsibleActionVisible.style.display = 'block'
-    collapsibleActionHidden.style.display = 'none'
+    collapsibleVisible.style.display = 'block'
+    collapsibleHidden.style.display = 'none'
     collapsibleContent.animate([{ height: 0 }, { height: '50px' }], {
       duration: 200,
     })
