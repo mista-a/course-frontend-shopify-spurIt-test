@@ -30,8 +30,5 @@ body {
 .figure__caption {
   margin: 8px;
   font-style: italic;
-}
-
-.figure__caption {
   text-align: center;
 }
